@@ -29,6 +29,13 @@ public class BreakableKiosk extends Kiosk implements Listener {
         if (!this.hasTitle(state)) return;
 
         final Function function = this.getFunction(state);
+        if (function == null) {
+            Main.courier.send(broken.getPlayer(), "unknownFunction", state.getLine(1));
+            broken.setCancelled(true);
+            state.update();
+            return;
+        }
+
         if (!function.canUse(broken.getPlayer())) {
             Main.courier.submit(new Sender(broken.getPlayer()), function.draftDenied());
             broken.setCancelled(true);

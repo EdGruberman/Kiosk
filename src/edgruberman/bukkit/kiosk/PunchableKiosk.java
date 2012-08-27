@@ -27,6 +27,12 @@ public class PunchableKiosk extends Kiosk implements Listener {
         if (!this.hasTitle(state)) return;
 
         final Function function = this.getFunction(state);
+        if (function == null) {
+            Main.courier.send(interaction.getPlayer(), "unknownFunction", state.getLine(1));
+            interaction.setCancelled(true);
+            return;
+        }
+
         if (!function.canUse(interaction.getPlayer())) {
             Main.courier.submit(new Sender(interaction.getPlayer()), function.draftDenied());
             interaction.setCancelled(true);
