@@ -1,0 +1,39 @@
+name: @NAME@
+version: @VERSION@
+description: Use signs to issue commands
+author: EdGruberman (ed@rjump.com)
+website: http://github.com/edgruberman
+main: edgruberman.bukkit.kiosk.Main
+commands:
+    'kiosk:remove':
+        description: Remove Kiosk sign
+        permission: kiosk.remove
+        usage: /<command>
+    'kiosk:reload':
+        description: Reload Kiosk plugin
+        permission: kiosk.reload
+        usage: /<command>
+permissions:
+    kiosk.admin:
+        description: Can use all commands
+        default: op
+        children:
+            kiosk.create: true
+            kiosk.override: true
+            kiosk.remove: true
+            kiosk.reload: true
+    kiosk.create:
+        description: Can create kiosks
+        default: false
+    kiosk.override:
+        description: Can apply and use any kiosk functions
+        default: false
+        children:
+            kiosk.override.apply: true
+            kiosk.override.use: true
+    kiosk.override.apply:
+        description: Can apply any function to a kiosk
+        default: false
+    kiosk.override.use:
+        description: Can use any function on a kiosk
+        default: false
