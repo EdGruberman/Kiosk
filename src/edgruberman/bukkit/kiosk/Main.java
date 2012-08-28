@@ -24,7 +24,7 @@ public final class Main extends CustomPlugin {
     final List<Permission> permissions = new ArrayList<Permission>();
 
     @Override
-    public void onLoad() { this.putConfigMinimum(CustomPlugin.CONFIGURATION_FILE, "1.0.0b13"); }
+    public void onLoad() { this.putConfigMinimum(CustomPlugin.CONFIGURATION_FILE, "1.0.2"); }
 
     @Override
     public void onEnable() {

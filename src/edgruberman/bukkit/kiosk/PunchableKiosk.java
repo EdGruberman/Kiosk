@@ -21,7 +21,7 @@ public class PunchableKiosk extends Kiosk implements Listener {
         super.onPlayerInteract(interaction);
 
         if (interaction.getAction() != Action.LEFT_CLICK_BLOCK) return;
-        if (!Kiosk.MATERIALS.contains(interaction.getClickedBlock().getTypeId())) return;
+        if (!Kiosk.SIGN_BLOCKS.contains(interaction.getClickedBlock().getTypeId())) return;
 
         final Sign state = (Sign) interaction.getClickedBlock().getState();
         if (!this.hasTitle(state)) return;
@@ -45,7 +45,7 @@ public class PunchableKiosk extends Kiosk implements Listener {
     @EventHandler(ignoreCancelled = true)
     public void onBlockBreak(final BlockBreakEvent broken) {
         if (broken instanceof KioskRemove) return;
-        if (!Kiosk.MATERIALS.contains(broken.getBlock().getTypeId())) return;
+        if (!Kiosk.SIGN_BLOCKS.contains(broken.getBlock().getTypeId())) return;
 
         final Sign state = (Sign) broken.getBlock().getState();
         if (!this.hasTitle(state)) return;

@@ -15,7 +15,7 @@ import edgruberman.bukkit.kiosk.messaging.Sender;
 
 public abstract class Kiosk {
 
-    public static final List<Integer> MATERIALS = Arrays.asList(Material.SIGN_POST.getId(), Material.WALL_SIGN.getId());
+    public static final List<Integer> SIGN_BLOCKS = Arrays.asList(Material.SIGN_POST.getId(), Material.WALL_SIGN.getId());
 
     protected final Attendant attendant;
     protected final String title;
@@ -73,7 +73,7 @@ public abstract class Kiosk {
 
     protected void onPlayerInteract(final PlayerInteractEvent interaction) {
         if (interaction.getAction() != Action.RIGHT_CLICK_BLOCK) return;
-        if (!Kiosk.MATERIALS.contains(interaction.getClickedBlock().getTypeId())) return;
+        if (!Kiosk.SIGN_BLOCKS.contains(interaction.getClickedBlock().getTypeId())) return;
 
         final Sign state = (Sign) interaction.getClickedBlock().getState();
         if (!this.hasTitle(state)) return;

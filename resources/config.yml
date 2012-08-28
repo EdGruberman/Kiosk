@@ -1,10 +1,10 @@
 logLevel: INFO
 kiosks:
     breakable:
-        title: '§4!Break!'
+        title: '§5!Break!'
         trigger: '!break!?'
     punchable:
-        title: '§4!Punch!'
+        title: '§5!Punch!'
         trigger: '!punch!?'
 functions: # 1 = Player Name, 2 = Player Display Name, 3 = 3rd Sign Line, 4 = 4th Sign Line, 5 = World, 6 = Block X, 7 = Block Y, 8 = Block Z
     Claim Home:
@@ -12,14 +12,14 @@ functions: # 1 = Player Name, 2 = Player Display Name, 3 = 3rd Sign Line, 4 = 4t
         denied: '-> You §ccan not claim§r more than one plot'
         apply: kiosk.apply.claim-home
         description:
-            - '-> Break this sign to claim {3}'
-            - '-> You can only claim one plot'
+            - '-> §5Break this sign to claim §o{3}'
+            - '-> §7You can only claim one spawn home'
             - '-> Compare first to §ebe sure you want this plot!'
         dispatch:
             - p+ kiosk.use.claim-home false {1}
             - simpleregions:region.owners.reset {1} {3} {5}
-            - 'simpleregions:region.rename "{1} Residence" {3} {5}'
-            - 'send {1} -> {3} renamed to "{1} Residence"'
+            - 'simpleregions:region.rename "{1}''''s Spawn Home" {3} {5}'
+            - 'send {1} -> {3} renamed to "{1}''''s Spawn Home"'
 permissions:
     kiosk.use.claim-home:
         default: false

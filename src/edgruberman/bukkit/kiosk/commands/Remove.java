@@ -51,7 +51,7 @@ public final class Remove implements CommandExecutor {
     }
 
     private boolean isKiosk(final Block block) {
-        if (!Kiosk.MATERIALS.contains(block.getTypeId())) return false;
+        if (!Kiosk.SIGN_BLOCKS.contains(block.getTypeId())) return false;
 
         final Sign state = (Sign) block.getState();
         for (final Kiosk kiosk : this.attendant.getKiosks())
