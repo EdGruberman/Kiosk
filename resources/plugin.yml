@@ -1,8 +1,8 @@
-name: @NAME@
+name: Kiosk
 version: @VERSION@
 description: Use signs to issue commands
 author: EdGruberman (ed@rjump.com)
-website: http://github.com/edgruberman
+website: http://github.com/EdGruberman/Kiosk
 main: edgruberman.bukkit.kiosk.Main
 commands:
     'kiosk:remove':
