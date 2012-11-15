@@ -62,6 +62,7 @@ public final class Version implements Comparable<Version> {
     }
 
 
+
     /** Software life-cycle indicator (Alpha -> Beta -> Release Candidate -> Production) */
     public static class Type implements Comparable<Type> {
 
@@ -92,7 +93,6 @@ public final class Version implements Comparable<Version> {
         @Override
         public int compareTo(final Type other) {
             return (other == null ? 1 : this.level.compareTo(other.level));
-
         }
 
     }
